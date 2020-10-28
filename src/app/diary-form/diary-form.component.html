@@ -1,0 +1,24 @@
+<form #dairyForm='ngForm' (ngSubmit)='submitsForm()'>
+    <label for='title'> Title
+        <input required type='text' id='title' name='title' [(ngModel)]='newEntry.title' #title='ngModel'/>
+        <div [hidden]='title.valid || title.pristine '>
+            <p>Title is required</p>
+        </div>
+    </label>
+    <br/>
+    <label for='description'> Description
+        <textarea required type='text' id='description' name='description' row='4' [(ngModel)]='newEntry.description' #description='ngModel'></textarea>
+        <div [hidden]='description.valid || description.pristine '>
+            <p>Description is required</p>
+        </div>
+    </label>
+    <br/>
+    <label for date> Select date:
+        <input require type='date' id='date' name='ndate' [(ngModel)]='newEntry.ndate' #ndate='ngModel'/>
+        <div [hidden]='ndate.valid || ndate.pristine '>
+            <p>Date is required</p>
+        </div>
+    </label>
+    <br/>
+    <button type='submit'>Add Entry</button>
+</form>

@@ -1,0 +1,10 @@
+<div *ngFor='let entry of entries; let i=index'> 
+    <h2 appHighlight>{{entry.title}}</h2>
+    <app-diary-description [entry]='entry'></app-diary-description>
+    <p>{{entry.submitedDate|date}}</p>
+    <button (click)='deleteEntry(i)'>Delete</button>
+</div>
+<div>
+    <h1>Enter a new entry</h1>
+    <app-diary-form (addEntry)='addNewEntry($event)'></app-diary-form>
+</div>
